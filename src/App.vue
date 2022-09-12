@@ -1,16 +1,34 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <template>
-<div>
-  <router-view />
-</div>
-    
+  <div>
+    <router-view />
+  </div>
 </template>
-
+<script lang="js">
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    increment() {
+      this.count++;
+      var a = "sdasd";
+    }
+  },
+  mounted() {
+    console.log(`The initial count is ${this.count}.`);
+    a =9;
+  }
+}
+</script>
+ 
 <style scoped>
 .logo {
   height: 6em;

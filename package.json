@@ -3,10 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
+    "lint": "yarn lint:js && yarn lint:style",
+    "lintfix": "yarn lint:js --fix && yarn lint:style --fix"
   },
   "dependencies": {
     "vue": "^3.2.37",
@@ -14,6 +19,7 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.14.7",
     "@vitejs/plugin-vue": "^3.1.0",
     "autoprefixer": "^10.4.8",
     "eslint": "^8.23.0",
@@ -26,8 +32,11 @@
     "vite-plugin-babel": "^1.1.2",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-restricted-globals": "^0.2.0",
-    "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^26.0.0",
-    "stylelint-scss": "^4.2.0"
+    "sass": "^1.43.3",
+    "sass-loader": "10",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^4.0.0"
   }
 }
